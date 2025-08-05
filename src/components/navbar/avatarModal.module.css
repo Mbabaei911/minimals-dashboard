@@ -1,0 +1,15 @@
+
+/* css for navbar avatar Modal */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+.animateFloat {
+  animation: float 4s ease-in-out infinite;
+}
+

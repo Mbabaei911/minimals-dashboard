@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Public Sans */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/PublicSans-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* DM Sans */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/DMSans-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Nunito Sans */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/NunitoSans-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Intro */
+@font-face {
+  font-family: 'Intro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Intro-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+:root {
+  --font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+  --primary-color: #3b82f6;
+  --size-multiplier: 1;
+}
+
+body {
+  font-family: var(--font-family), -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: font-family 0.2s ease;
+  font-size: calc(1rem * var(--size-multiplier));
+}
+
+.dark {
+  @apply bg-gray-900 text-gray-100;
+}
+
+
+/* Scrollbar styles */
+.scrollbar-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-light::-webkit-scrollbar-track {
+  background: #f1f5f9; /* slate-100 */
+}
+
+.scrollbar-light::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* slate-300 */
+  border-radius: 3px;
+}
+
+.scrollbar-light::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* slate-400 */
+}
+
+.scrollbar-dark::-webkit-scrollbar-track {
+  background: #1e293b; /* slate-800 */
+}
+
+.scrollbar-dark::-webkit-scrollbar-thumb {
+  background: #475569; /* slate-600 */
+  border-radius: 3px;
+}
+
+.scrollbar-dark::-webkit-scrollbar-thumb:hover {
+  background: #64748b; /* slate-500 */
+}
