@@ -105,7 +105,7 @@ const IconButton: React.FC<{
   <button
     aria-label={ariaLabel}
     onClick={onClick}
-    className={`p-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors ${className} cursor-pointer`}
+    className={`p-1.5 rounded-full hover:bg-gray-200 dark:hover:bg-gray-200 transition-colors ${className} cursor-pointer`}
     type="button"
   >
     <span className="flex items-center justify-center">{icon}</span>
@@ -181,7 +181,7 @@ const Header: React.FC = () => {
     setSettingsSidebar(false);
     setContactSidebar(false);
   };
-console.log(contactSidebar);
+
   // Toggle functions for each sidebar
   const toggleSidebar = () => setHamburgerSidebar(!hamburgerSidebar);
   const toggleSearch = () => setSearchOpen(!searchOpen);
@@ -200,6 +200,7 @@ console.log(contactSidebar);
     settingsSidebar ||
     contactSidebar;
 
+    const { darkMode } = useUIStore();
   return (
     <>
       {/* Left Sidebar - Menu */}
@@ -230,15 +231,17 @@ console.log(contactSidebar);
       {/* contact modal */}
       {contactSidebar && <ContactModal onClose={closeAll} />}
 
-      {/* Main Header */}
-      <header className="flex items-center justify-between gap-4 px-4 py-2 bg-[#d9d9d9] dark:bg-gray-800 relative z-30 shadow-sm">
+    {/* Main Header - Improved with better dark mode handling */}
+    <header className={`flex items-center justify-between gap-4 px-4 py-2 ${
+        darkMode ? 'bg-gray-800' : 'bg-white'
+      } relative z-30 shadow-sm transition-colors duration-200`}>
         {/* Left side controls */}
         <div className="flex items-center justify-center space-x-5">
           <IconButton
             icon={<RxHamburgerMenu />}
             ariaLabel="Menu"
             onClick={toggleSidebar}
-            className="text-[#6b6b6b] dark:text-gray-300 text-2xl"
+            className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} text-2xl`}
           />
           <LogoWithArrows />
         </div>
@@ -249,30 +252,29 @@ console.log(contactSidebar);
             icon={<BiSearch />}
             ariaLabel="Search"
             onClick={toggleSearch}
-            className="text-[#6b6b6b] dark:text-gray-300 text-xl ml-2"
+            className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} text-xl ml-2`}
           />
 
           <FlagDropdown />
 
-          {/* Contact button */}
           <IconButton
             icon={<MdGroup size={25} />}
             ariaLabel="Contacts"
             onClick={toggleContactSidebar}
-            className="text-[#6b6b6b] dark:text-gray-300 text-xl"
-          ></IconButton>
+            className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} text-xl`}
+          />
 
-          {/* setting button */}
           <IconButton
             icon={<AiFillSetting size={25} />}
             ariaLabel="Settings"
             onClick={toggleSettingsSidebar}
-            className={`text-gray-300 dark:text-gray-300 ${styles.animateSpinSlow}`}
+            className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} ${styles.animateSpinSlow}`}
           />
 
           <UserAvatar onClick={toggleAvatarSidebar} />
         </div>
       </header>
+      
 
       {/* Contact Modal - Render only when needed */}
     </>

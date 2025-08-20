@@ -2,42 +2,42 @@
 
 /* Public Sans */
 @font-face {
-  font-family: 'Public Sans';
+  font-family: "Public Sans";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/PublicSans-Regular.woff2') format('woff2');
+  src: url("/fonts/PublicSans-Regular.woff2") format("woff2");
   font-display: swap;
 }
 
 /* DM Sans */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/DMSans-Regular.woff2') format('woff2');
+  src: url("/fonts/DMSans-Regular.woff2") format("woff2");
   font-display: swap;
 }
 
 /* Nunito Sans */
 @font-face {
-  font-family: 'Nunito Sans';
+  font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/NunitoSans-Regular.woff2') format('woff2');
+  src: url("/fonts/NunitoSans-Regular.woff2") format("woff2");
   font-display: swap;
 }
 
 /* Intro */
 @font-face {
-  font-family: 'Intro';
+  font-family: "Intro";
   font-style: normal;
   font-weight: 400;
-  src: url('/fonts/Intro-Regular.woff2') format('woff2');
+  src: url("/fonts/Intro-Regular.woff2") format("woff2");
   font-display: swap;
 }
 
 :root {
-  --font-family: 'Public Sans', system-ui, -apple-system, sans-serif;
+  --font-family: "Public Sans", system-ui, -apple-system, sans-serif;
   --primary-color: #3b82f6;
   --size-multiplier: 1;
 }
@@ -51,7 +51,6 @@ body {
 .dark {
   @apply bg-gray-900 text-gray-100;
 }
-
 
 /* Scrollbar styles */
 .scrollbar-container::-webkit-scrollbar {
@@ -84,3 +83,14 @@ body {
 .scrollbar-dark::-webkit-scrollbar-thumb:hover {
   background: #64748b; /* slate-500 */
 }
+
+.bg-customGreen {
+  background-color: #00a76f;
+  transition: all 0.3s ease;
+}
+
+.bg-customGreen:hover {
+  background-color: #007867;
+  box-shadow: 0px 3px 15px rgba(0, 167, 111, 0.7);
+}
+

@@ -76,7 +76,7 @@ const FlagDropdown = () => {
   }, []);
 
   // Dark mode classes
-  const buttonClasses = `flex items-center gap-2 p-2 text-sm font-medium rounded-full hover:bg-gray-700 cursor-pointer hover:scale-105 ${
+  const buttonClasses = `flex items-center gap-2 p-2 text-sm font-medium rounded-full hover:bg-gray-200 cursor-pointer hover:scale-105 ${
     darkMode ? "text-gray-200 hover:bg-gray-700" : "text-gray-700"
   }`;
 

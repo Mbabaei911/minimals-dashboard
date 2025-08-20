@@ -9,6 +9,7 @@ export default {
       colors: {
         primary: "#000000",
         danger: "#ef4444", // Your custom red
+        customGreen:"#00A76F"
       },
     },
   },
